@@ -1,0 +1,11 @@
+{
+  "itemGroup.shadowtech.general": "Shadow Tech",
+  "item.shadowtech.steel_ingot": "Steel Ingot",
+  "item.shadowtech.tin_ingot": "Tin Ingot",
+  "item.shadowtech.copper_ingot": "Copper Ingot",
+  "block.shadowtech.steel_block": "Steel Block",
+  "block.shadowtech.machine_frame": "Machine Frame",
+  "block.shadowtech.alloy_smelter": "Alloy Smelter",
+  "block.shadowtech.coal_generator": "Coal Generator",
+  "gui.shadowtech.energy": "SF"
+}

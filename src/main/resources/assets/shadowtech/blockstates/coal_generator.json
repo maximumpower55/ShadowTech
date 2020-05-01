@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "": {"model": "shadowtech:block/coal_generator"},
+    "g": {"model": "shadowtech:block/coal_generator_on"}
+  }
+}

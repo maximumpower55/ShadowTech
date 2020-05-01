@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ^ ",
+    "$#$",
+    "%%%"
+  ],
+  "key": {
+    "#": {
+      "item": "shadowtech:machine_frame"
+    },
+    "%": {
+      "item": "minecraft:iron_ingot"
+    },
+    "$": {
+      "item": "minecraft:redstone"
+    },
+    "^": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "shadowtech:coal_generator",
+    "count": 1
+  }
+}

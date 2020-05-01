@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shadowtech:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "shadowtech:steel_block",
+    "count": 1
+  }
+}
