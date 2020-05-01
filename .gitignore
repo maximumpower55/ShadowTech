@@ -1,3 +1,21 @@
+# gradle
+
+.gradle/
+build/
+out/
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# fabric
+
+run/
+minecraft/
+=======
 .gradle
 .idea
 run
@@ -15,3 +33,4 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+>>>>>>> ac1a2c3ebf7bc1908668ce7370e8813f15179fe4
