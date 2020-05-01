@@ -21,19 +21,19 @@ class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProv
     }
 
     override fun onUse(
-        state: BlockState?,
-        world: World,
-        pos: BlockPos?,
-        player: PlayerEntity?,
-        hand: Hand?,
-        hit: BlockHitResult?
+            state: BlockState?,
+            world: World,
+            pos: BlockPos?,
+            player: PlayerEntity?,
+            hand: Hand?,
+            hit: BlockHitResult?
     ): ActionResult? {
         if (world.isClient) return ActionResult.PASS
         val be = world.getBlockEntity(pos)
         if (be != null && be is CoalGeneratorBlockEntity) {
             ContainerProviderRegistry.INSTANCE.openContainer(
-                Identifier("shadowtech", "coal_generator"),
-                player
+                    Identifier("shadowtech", "coal_generator"),
+                    player
             ) { packetByteBuf -> packetByteBuf.writeBlockPos(pos) }
         }
         return ActionResult.SUCCESS

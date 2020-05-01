@@ -1,0 +1,11 @@
+language: java
+install: true
+
+jdk:
+  - openjdk8
+
+script:
+  - gradlew check build test --stacktrace
+
+notifications:
+  email: false

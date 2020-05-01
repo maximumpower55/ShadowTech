@@ -9,7 +9,7 @@ import team.reborn.energy.EnergyTier
 
 class AlloySmelterBlockEntity : BlockEntity(ShadowTechMod.ALLOY_SMELTER_BLOCK_ENTITY), EnergyHolder, Tickable {
     override fun getMaxStoredPower(): Double {
-        return 1000000000.0
+        return 99.0
     }
 
     override fun getTier(): EnergyTier {
