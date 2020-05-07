@@ -10,7 +10,7 @@ import net.minecraft.sound.BlockSoundGroup
 
 class ModBlocks {
     companion object {
-        val ALLOY_SMELTER = AlloySmelterBlock(
+        var ALLOY_SMELTER = AlloySmelterBlock(
                 FabricBlockSettings
                         .of(Material.METAL)
                         .breakByHand(false)
@@ -19,7 +19,7 @@ class ModBlocks {
                         .sounds(BlockSoundGroup.ANVIL)
                         .build()
         )
-        val COAL_GENERATOR = CoalGeneratorBlock(
+        var COAL_GENERATOR = CoalGeneratorBlock(
                 FabricBlockSettings
                         .of(Material.METAL)
                         .breakByHand(false)
@@ -28,7 +28,7 @@ class ModBlocks {
                         .sounds(BlockSoundGroup.ANVIL)
                         .build()
         )
-        val STEEL_BLOCK = Block(
+        var STEEL_BLOCK = Block(
                 FabricBlockSettings
                         .of(Material.METAL)
                         .breakByHand(false)
@@ -37,7 +37,7 @@ class ModBlocks {
                         .sounds(BlockSoundGroup.METAL)
                         .build()
         )
-        val MACHINE_FRAME = Block(
+        var MACHINE_FRAME = Block(
                 FabricBlockSettings
                         .of(Material.METAL)
                         .breakByHand(false)

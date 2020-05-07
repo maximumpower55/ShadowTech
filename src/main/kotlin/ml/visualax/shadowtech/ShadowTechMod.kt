@@ -25,16 +25,16 @@ class ShadowTechMod {
     companion object {
         var ALLOY_SMELTER_BLOCK_ENTITY: BlockEntityType<AlloySmelterBlockEntity>? = null
         var COAL_GENERATOR_BLOCK_ENTITY: BlockEntityType<CoalGeneratorBlockEntity>? = null
-        val ITEM_GROUP: ItemGroup = FabricItemGroupBuilder.build(
-                Identifier("shadowtech", "general"),
-                { ItemStack(ModItems.STEEL_INGOT) })
+        var ITEM_GROUP: ItemGroup = FabricItemGroupBuilder.build(
+                Identifier("shadowtech", "general")
+        ) { ItemStack(ModItems.STEEL_INGOT) }
     }
 
     @Suppress("unused")
     fun initClient() {
         // GUIS
         ScreenProviderRegistry.INSTANCE.registerFactory(Identifier("shadowtech", "coal_generator")
-        ) { syncId: Int, identifier: Identifier?, player: PlayerEntity, buf: PacketByteBuf ->
+        ) { syncId: Int, _: Identifier?, player: PlayerEntity, buf: PacketByteBuf ->
             CoalGeneratorBlockScreen(
                 CoalGeneratorBlockController(
                     syncId,

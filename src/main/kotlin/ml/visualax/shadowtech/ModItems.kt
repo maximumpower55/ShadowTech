@@ -7,9 +7,9 @@ import net.minecraft.util.Identifier
 
 class ModItems {
     companion object {
-        val STEEL_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
-        val COPPER_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
-        val TIN_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
+        var STEEL_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
+        var COPPER_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
+        var TIN_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
     }
 }
 
