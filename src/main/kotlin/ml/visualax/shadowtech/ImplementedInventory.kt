@@ -107,3 +107,4 @@ interface ImplementedInventory : Inventory {
         }
     }
 }
+

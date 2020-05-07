@@ -12,3 +12,4 @@ class ModItems {
         val TIN_INGOT = Item(Item.Settings().group(ShadowTechMod.ITEM_GROUP))
     }
 }
+
