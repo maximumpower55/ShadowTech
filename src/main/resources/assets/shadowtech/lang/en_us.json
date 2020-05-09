@@ -4,6 +4,8 @@
   "item.shadowtech.tin_ingot": "Tin Ingot",
   "item.shadowtech.copper_ingot": "Copper Ingot",
   "block.shadowtech.steel_block": "Steel Block",
+  "block.shadowtech.copper_block": "Copper Block",
+  "block.shadowtech.tin_block": "Tin Block",
   "block.shadowtech.machine_frame": "Machine Frame",
   "block.shadowtech.alloy_smelter": "Alloy Smelter",
   "block.shadowtech.coal_generator": "Coal Generator",

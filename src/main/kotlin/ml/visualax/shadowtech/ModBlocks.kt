@@ -37,6 +37,24 @@ class ModBlocks {
                         .sounds(BlockSoundGroup.METAL)
                         .build()
         )
+        var COPPER_BLOCK = Block(
+                FabricBlockSettings
+                        .of(Material.METAL)
+                        .breakByHand(false)
+                        .breakByTool(FabricToolTags.PICKAXES)
+                        .strength(8.5f, 1.2f)
+                        .sounds(BlockSoundGroup.METAL)
+                        .build()
+        )
+        var TIN_BLOCK = Block(
+                FabricBlockSettings
+                        .of(Material.METAL)
+                        .breakByHand(false)
+                        .breakByTool(FabricToolTags.PICKAXES)
+                        .strength(6.5f, 1.000001f)
+                        .sounds(BlockSoundGroup.METAL)
+                        .build()
+        )
         var MACHINE_FRAME = Block(
                 FabricBlockSettings
                         .of(Material.METAL)

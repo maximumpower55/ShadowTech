@@ -1,9 +1,7 @@
 {
   "parent": "block/cube",
   "textures": {
-    "particle": "shadowtech:block/machine_side"
-  },
-  "textures": {
+    "particle": "shadowtech:block/machine_side",
     "west": "shadowtech:block/coal_generator_front_on",
     "east": "shadowtech:block/machine_side",
     "north": "shadowtech:block/machine_side",

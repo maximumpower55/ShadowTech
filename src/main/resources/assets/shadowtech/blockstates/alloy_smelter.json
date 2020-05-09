@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "": {"model": "shadowtech:block/alloy_smelter"},
+    "generating=true": {"model": "shadowtech:block/alloy_smelter_on"}
+  }
+}

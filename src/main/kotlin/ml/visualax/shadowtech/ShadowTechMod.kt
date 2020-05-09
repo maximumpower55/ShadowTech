@@ -27,11 +27,20 @@ class ShadowTechMod {
         var COAL_GENERATOR_BLOCK_ENTITY: BlockEntityType<CoalGeneratorBlockEntity>? = null
         var ITEM_GROUP: ItemGroup = FabricItemGroupBuilder.build(
                 Identifier("shadowtech", "general")
-        ) { ItemStack(ModItems.STEEL_INGOT) }
+        ) { ItemStack(ModBlocks.COAL_GENERATOR) }
     }
 
     @Suppress("unused")
     fun initClient() {
+<<<<<<< Updated upstream
+=======
+        // RENDER BLOCKS
+        BlockRenderLayerMap.INSTANCE.putBlocks(
+                RenderLayer.getCutout(),
+                ModBlocks.MACHINE_FRAME
+        )
+
+>>>>>>> Stashed changes
         // GUIS
         ScreenProviderRegistry.INSTANCE.registerFactory(Identifier("shadowtech", "coal_generator")
         ) { syncId: Int, _: Identifier?, player: PlayerEntity, buf: PacketByteBuf ->
@@ -69,6 +78,16 @@ class ShadowTechMod {
             BlockItem(ModBlocks.STEEL_BLOCK, Item.Settings().group(ITEM_GROUP))
         )
         Registry.register(
+                Registry.ITEM,
+                Identifier("shadowtech", "copper_block"),
+                BlockItem(ModBlocks.COPPER_BLOCK, Item.Settings().group(ITEM_GROUP))
+        )
+        Registry.register(
+                Registry.ITEM,
+                Identifier("shadowtech", "tin_block"),
+                BlockItem(ModBlocks.TIN_BLOCK, Item.Settings().group(ITEM_GROUP))
+        )
+        Registry.register(
             Registry.ITEM,
             Identifier("shadowtech", "machine_frame"),
             BlockItem(ModBlocks.MACHINE_FRAME, Item.Settings().group(ITEM_GROUP))
@@ -89,6 +108,8 @@ class ShadowTechMod {
             BlockEntityType.Builder.create(Supplier { CoalGeneratorBlockEntity() }, ModBlocks.COAL_GENERATOR).build(null)
         );
         Registry.register(Registry.BLOCK, Identifier("shadowtech", "steel_block"), ModBlocks.STEEL_BLOCK)
+        Registry.register(Registry.BLOCK, Identifier("shadowtech", "copper_block"), ModBlocks.COPPER_BLOCK)
+        Registry.register(Registry.BLOCK, Identifier("shadowtech", "tin_block"), ModBlocks.TIN_BLOCK)
 
         // GUIS
         ContainerProviderRegistry.INSTANCE.registerFactory(
