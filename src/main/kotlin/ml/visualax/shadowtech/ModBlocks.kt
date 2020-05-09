@@ -16,7 +16,7 @@ class ModBlocks {
                         .breakByHand(false)
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(10.5f, 2.2f)
-                        .sounds(BlockSoundGroup.ANVIL)
+                        .sounds(BlockSoundGroup.METAL)
                         .build()
         )
         var COAL_GENERATOR = CoalGeneratorBlock(
@@ -25,7 +25,7 @@ class ModBlocks {
                         .breakByHand(false)
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(10.5f, 2.2f)
-                        .sounds(BlockSoundGroup.ANVIL)
+                        .sounds(BlockSoundGroup.METAL)
                         .build()
         )
         var STEEL_BLOCK = Block(

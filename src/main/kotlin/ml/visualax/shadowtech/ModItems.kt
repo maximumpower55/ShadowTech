@@ -1,9 +1,6 @@
 package ml.visualax.shadowtech
 
 import net.minecraft.item.Item
-import net.minecraft.item.ItemGroup
-import net.minecraft.item.ItemStack
-import net.minecraft.util.Identifier
 
 class ModItems {
     companion object {
