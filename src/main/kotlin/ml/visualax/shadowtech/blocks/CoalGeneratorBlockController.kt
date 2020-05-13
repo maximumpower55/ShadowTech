@@ -13,13 +13,13 @@ import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
 
 class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory?, context: BlockContext?):
-    CottonCraftingController(
-        RecipeType.SMELTING,
-        syncId,
-        playerInventory,
-        getBlockInventory(context),
-        getBlockPropertyDelegate(context)
-    ) {
+        CottonCraftingController(
+                RecipeType.SMELTING,
+                syncId,
+                playerInventory,
+                getBlockInventory(context),
+                getBlockPropertyDelegate(context)
+        ) {
     init {
         val root = WGridPanel()
         setRootPanel(root)
@@ -29,8 +29,8 @@ class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory
         label.setAlignment(Alignment.CENTER)
         root.add(label, 0, 0, 9, 1)
 
-        val bar = WBar(ENERGY_BAR_EMPTY, ENERGY_BAR_FULL, 0, 1, WBar.Direction.UP).withTooltip("gui.shadowtech.energy")
-        root.add(bar, 0, 0, 1, 3);
+        val energybar = WBar(ENERGY_BAR_EMPTY, ENERGY_BAR_FULL, 0, 1, WBar.Direction.UP).withTooltip("gui.shadowtech.energy")
+        root.add(energybar, 0, 0, 1, 3);
 
         val itemSlot = WItemSlot.of(blockInventory, 0)
         root.add(itemSlot, 4, 1)

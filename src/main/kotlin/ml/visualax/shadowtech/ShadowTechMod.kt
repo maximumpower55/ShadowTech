@@ -1,21 +1,18 @@
 package ml.visualax.shadowtech
 
 import ml.visualax.shadowtech.blocks.*
-import net.fabricmc.fabric.api.block.FabricBlockSettings
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.client.screen.ScreenProviderRegistry
 import net.fabricmc.fabric.api.container.ContainerProviderRegistry
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
-import net.minecraft.block.Block
-import net.minecraft.block.Material
 import net.minecraft.block.entity.BlockEntityType
+import net.minecraft.client.render.RenderLayer
 import net.minecraft.container.BlockContext
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
-import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.PacketByteBuf
 import net.minecraft.util.registry.Registry
@@ -32,15 +29,12 @@ class ShadowTechMod {
 
     @Suppress("unused")
     fun initClient() {
-<<<<<<< Updated upstream
-=======
-        // RENDER BLOCKS
+        // RENDER
         BlockRenderLayerMap.INSTANCE.putBlocks(
                 RenderLayer.getCutout(),
                 ModBlocks.MACHINE_FRAME
         )
 
->>>>>>> Stashed changes
         // GUIS
         ScreenProviderRegistry.INSTANCE.registerFactory(Identifier("shadowtech", "coal_generator")
         ) { syncId: Int, _: Identifier?, player: PlayerEntity, buf: PacketByteBuf ->

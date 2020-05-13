@@ -23,10 +23,12 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
     override fun fromTag(tag: CompoundTag?) {
         super.fromTag(tag)
         Inventories.fromTag(tag, items)
+        storedEnergy = tag?.getDouble("Energy")!!
     }
 
     override fun toTag(tag: CompoundTag?): CompoundTag? {
         Inventories.toTag(tag, items)
+        tag?.putDouble("Energy", storedEnergy)
         return super.toTag(tag)
     }
 
