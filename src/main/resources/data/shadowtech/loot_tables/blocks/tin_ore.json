@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "shadowtech:machine_frame"
+          "name": "shadowtech:tin_ore"
         }
       ],
       "conditions": [

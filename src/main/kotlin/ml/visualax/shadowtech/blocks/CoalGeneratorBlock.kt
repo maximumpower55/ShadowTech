@@ -14,7 +14,6 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
 
-
 class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProvider {
     override fun createBlockEntity(blockView: BlockView?): BlockEntity? {
         return CoalGeneratorBlockEntity()

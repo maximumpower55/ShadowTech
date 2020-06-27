@@ -55,7 +55,25 @@ class ModBlocks {
                         .sounds(BlockSoundGroup.METAL)
                         .build()
         )
-        var MACHINE_FRAME = Block(
+        var COPPER_ORE = Block(
+                FabricBlockSettings
+                        .of(Material.STONE)
+                        .breakByHand(false)
+                        .breakByTool(FabricToolTags.PICKAXES)
+                        .strength(4.1f, 0.5f)
+                        .sounds(BlockSoundGroup.STONE)
+                        .build()
+        )
+        var TIN_ORE = Block(
+                FabricBlockSettings
+                        .of(Material.STONE)
+                        .breakByHand(false)
+                        .breakByTool(FabricToolTags.PICKAXES)
+                        .strength(4.1f, 0.5f)
+                        .sounds(BlockSoundGroup.STONE)
+                        .build()
+        )
+        var LIGHT_MACHINE_FRAME = Block(
                 FabricBlockSettings
                         .of(Material.METAL)
                         .breakByHand(false)

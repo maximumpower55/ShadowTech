@@ -1,4 +1,4 @@
-package ml.visualax.shadowtech
+package ml.visualax.shadowtech.interfaces
 
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.inventory.Inventories
@@ -48,9 +48,6 @@ interface ImplementedInventory : Inventory {
      */
     override fun takeInvStack(slot: Int, count: Int): ItemStack {
         val result = Inventories.splitStack(items, slot, count)
-        if (!result.isEmpty) {
-            markDirty()
-        }
         return result
     }
 
@@ -95,7 +92,7 @@ interface ImplementedInventory : Inventory {
          * Creates an inventory from the item list.
          */
         fun of(items: DefaultedList<ItemStack?>): ImplementedInventory = object :
-            ImplementedInventory {
+                ImplementedInventory {
             override val items = items
         }
 

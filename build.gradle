@@ -38,7 +38,7 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
-    modImplementation "io.github.cottonmc:LibGui:1.8.2+1.15.2"
+    modImplementation "io.github.cottonmc:LibGui:2.0.1+1.16.1"
 
     modApi 'teamreborn:energy:0.1.0'
     include 'teamreborn:energy:0.1.0'

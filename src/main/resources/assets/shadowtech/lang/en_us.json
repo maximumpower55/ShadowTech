@@ -1,12 +1,15 @@
 {
-  "itemGroup.shadowtech.general": "Shadow Tech",
+  "itemGroup.shadowtech.main": "ShadowTech",
+  "itemGroup.shadowtech.ores": "ShadowTech Ores",
   "item.shadowtech.steel_ingot": "Steel Ingot",
   "item.shadowtech.tin_ingot": "Tin Ingot",
   "item.shadowtech.copper_ingot": "Copper Ingot",
   "block.shadowtech.steel_block": "Steel Block",
   "block.shadowtech.copper_block": "Copper Block",
   "block.shadowtech.tin_block": "Tin Block",
-  "block.shadowtech.machine_frame": "Machine Frame",
+  "block.shadowtech.tin_ore": "Tin Ore",
+  "block.shadowtech.copper_ore": "Copper Ore",
+  "block.shadowtech.light_machine_frame": "Light Machine Frame",
   "block.shadowtech.alloy_smelter": "Alloy Smelter",
   "block.shadowtech.coal_generator": "Coal Generator",
   "gui.shadowtech.energy": "SF"

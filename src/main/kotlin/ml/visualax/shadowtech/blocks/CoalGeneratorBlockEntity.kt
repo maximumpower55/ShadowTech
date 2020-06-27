@@ -1,7 +1,7 @@
 package ml.visualax.shadowtech.blocks
 
 import io.github.cottonmc.cotton.gui.PropertyDelegateHolder
-import ml.visualax.shadowtech.ImplementedInventory
+import ml.visualax.shadowtech.interfaces.ImplementedInventory
 import ml.visualax.shadowtech.ShadowTechMod
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.container.PropertyDelegate
@@ -15,7 +15,6 @@ import team.reborn.energy.EnergySide
 import team.reborn.energy.EnergyStorage
 import team.reborn.energy.EnergyTier
 
-
 class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_ENTITY), EnergyStorage, ImplementedInventory, PropertyDelegateHolder, Tickable {
     var storedEnergy = 0.0
     override val items: DefaultedList<ItemStack?> = DefaultedList.ofSize(1, ItemStack.EMPTY)
@@ -23,7 +22,7 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
     override fun fromTag(tag: CompoundTag?) {
         super.fromTag(tag)
         Inventories.fromTag(tag, items)
-        storedEnergy = tag?.getDouble("Energy")!!
+        setStored(tag?.getDouble("Energy")!!)
     }
 
     override fun toTag(tag: CompoundTag?): CompoundTag? {
@@ -68,8 +67,8 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
     fun generateEnergy() {
         val stack = getInvStack(0);
         if (isValidFuel(stack)) {
-            if (propertyDelegate[0] < propertyDelegate[1]) {
-                if (energyTick >= 20) {
+            if (storedEnergy < maxStoredPower) {
+                if (energyTick >= 16) {
                     stack.count--
                     storedEnergy += 2.5
                     energyTick = 0

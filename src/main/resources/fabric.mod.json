@@ -4,13 +4,14 @@
   "version": "${version}",
 
   "name": "ShadowTech",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "ShadowTech is my first mod ever",
   "authors": [
-    "Maximumpower55"
+    "maximumpower55"
   ],
+
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://visualax.ml/",
+    "sources": "https://github.com/maximumpower55/ShadowTech/"
   },
 
   "license": "CC0-1.0",
@@ -25,12 +26,14 @@
       "ml.visualax.shadowtech.ShadowTechMod::initMain"
     ]
   },
+
   "depends": {
     "fabricloader": ">=0.7.1",
     "fabric": "*",
     "fabric-language-kotlin": "*",
-    "minecraft": "1.15.x"
+    "minecraft": "1.16.x"
   },
+
   "suggests": {
     "flamingo": "*"
   }
