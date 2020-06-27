@@ -3,13 +3,14 @@ package ml.visualax.shadowtech.blocks
 import io.github.cottonmc.cotton.gui.PropertyDelegateHolder
 import ml.visualax.shadowtech.ShadowTechMod
 import ml.visualax.shadowtech.interfaces.ImplementedInventory
+import net.minecraft.block.BlockState
 import net.minecraft.block.entity.BlockEntity
-import net.minecraft.container.PropertyDelegate
 import net.minecraft.inventory.Inventories
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.CompoundTag
-import net.minecraft.util.DefaultedList
+import net.minecraft.screen.PropertyDelegate
 import net.minecraft.util.Tickable
+import net.minecraft.util.collection.DefaultedList
 import team.reborn.energy.EnergyHolder
 import team.reborn.energy.EnergyTier
 
@@ -17,10 +18,10 @@ class AlloySmelterBlockEntity : BlockEntity(ShadowTechMod.ALLOY_SMELTER_BLOCK_EN
     var storedEnergy = 0.0
     override val items: DefaultedList<ItemStack?> = DefaultedList.ofSize(3, ItemStack.EMPTY)
 
-    override fun fromTag(tag: CompoundTag?) {
+    override fun fromTag(state: BlockState?, tag: CompoundTag?) {
         Inventories.fromTag(tag, items)
         storedEnergy = tag?.getDouble("Energy")!!
-        super.fromTag(tag)
+        super.fromTag(state, tag)
     }
 
     override fun toTag(tag: CompoundTag?): CompoundTag? {

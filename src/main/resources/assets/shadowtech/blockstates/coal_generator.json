@@ -1,6 +1,16 @@
 {
   "variants": {
-    "": {"model": "shadowtech:block/coal_generator"},
-    "generating=true": {"model": "shadowtech:block/coal_generator_on"}
+    "facing=north,active=false": { "model": "shadowtech:block/coal_generator" },
+    "facing=south,active=false": { "model": "shadowtech:block/coal_generator", "y": 180 },
+    "facing=west,active=false":  { "model": "shadowtech:block/coal_generator", "y": 270 },
+    "facing=east,active=false":  { "model": "shadowtech:block/coal_generator", "y": 90 },
+    "facing=down,active=false":  { "model": "shadowtech:block/coal_generator", "x": 180 },
+    "facing=up,active=false":  { "model": "shadowtech:block/coal_generator" },
+    "facing=north,active=true": { "model": "shadowtech:block/coal_generator_on" },
+    "facing=south,active=true": { "model": "shadowtech:block/coal_generator_on", "y": 180 },
+    "facing=west,active=true":  { "model": "shadowtech:block/coal_generator_on", "y": 270 },
+    "facing=east,active=true":  { "model": "shadowtech:block/coal_generator_on", "y": 90 },
+    "facing=down,active=true":  { "model": "shadowtech:block/coal_generator_on", "x": 180 },
+    "facing=up,active=true":  { "model": "shadowtech:block/coal_generator_on" }
   }
 }

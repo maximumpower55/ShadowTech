@@ -5,16 +5,19 @@ import io.github.cottonmc.cotton.gui.widget.WBar
 import io.github.cottonmc.cotton.gui.widget.WGridPanel
 import io.github.cottonmc.cotton.gui.widget.WItemSlot
 import io.github.cottonmc.cotton.gui.widget.WLabel
-import io.github.cottonmc.cotton.gui.widget.data.Alignment
+import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment
+import ml.visualax.shadowtech.ShadowTechMod
 import ml.visualax.shadowtech.gui.GuiReferences
-import net.minecraft.container.BlockContext
+import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.recipe.RecipeType
+import net.minecraft.screen.ScreenHandlerContext
 import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
 
-class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory?, context: BlockContext?):
+class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory?, context: ScreenHandlerContext?):
         SyncedGuiDescription(
+                ShadowTechMod.COAL_GENERATOR_HANDLER,
                 syncId,
                 playerInventory,
                 getBlockInventory(context),
@@ -26,7 +29,7 @@ class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory
         root.setSize(150, 90)
 
         val label = WLabel(TranslatableText("block.shadowtech.coal_generator"))
-        label.setAlignment(Alignment.CENTER)
+        label.horizontalAlignment = HorizontalAlignment.CENTER
         root.add(label, 0, 0, 9, 1)
 
         val energybar = WBar(GuiReferences.ENERGY_BAR_EMPTY, GuiReferences.ENERGY_BAR_FULL, 0, 1, WBar.Direction.UP).withTooltip("gui.shadowtech.energy")

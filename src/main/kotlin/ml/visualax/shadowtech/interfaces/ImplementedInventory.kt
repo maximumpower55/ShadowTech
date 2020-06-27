@@ -4,7 +4,8 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.inventory.Inventories
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack
-import net.minecraft.util.DefaultedList
+import net.minecraft.util.collection.DefaultedList
+
 
 interface ImplementedInventory : Inventory {
     /**
@@ -12,20 +13,20 @@ interface ImplementedInventory : Inventory {
      * Must return the same instance every time it's called.
      */
     val items: DefaultedList<ItemStack?>
-    // Inventory
+
     /**
      * Returns the inventory size.
      */
-    override fun getInvSize(): Int {
+    override fun size(): Int {
         return items.size
     }
 
     /**
      * @return true if this inventory has only empty stacks, false otherwise
      */
-    override fun isInvEmpty(): Boolean {
-        for (i in 0 until invSize) {
-            val stack = getInvStack(i)
+    override fun isEmpty(): Boolean {
+        for (i in 0 until size()) {
+            val stack = getStack(i)
             if (!stack.isEmpty) {
                 return false
             }
@@ -36,7 +37,7 @@ interface ImplementedInventory : Inventory {
     /**
      * Gets the item in the slot.
      */
-    override fun getInvStack(slot: Int): ItemStack {
+    override fun getStack(slot: Int): ItemStack {
         return items[slot]
     }
 
@@ -46,34 +47,21 @@ interface ImplementedInventory : Inventory {
      * (default implementation) If there are less items in the slot than what are requested,
      * takes all items in that slot.
      */
-    override fun takeInvStack(slot: Int, count: Int): ItemStack {
+    override fun removeStack(slot: Int, count: Int): ItemStack? {
         val result = Inventories.splitStack(items, slot, count)
+        if (!result.isEmpty) {
+            markDirty()
+        }
         return result
     }
 
     /**
      * Removes the current stack in the `slot` and returns it.
      */
-    override fun removeInvStack(slot: Int): ItemStack {
+    override fun removeStack(slot: Int): ItemStack? {
         return Inventories.removeStack(items, slot)
     }
 
-    /**
-     * Replaces the current stack in the `slot` with the provided stack.
-     *
-     * If the stack is too big for this inventory ([Inventory.getInvMaxStackAmount]),
-     * it gets resized to this inventory's maximum amount.
-     */
-    override fun setInvStack(slot: Int, stack: ItemStack) {
-        items[slot] = stack
-        if (stack.count > invMaxStackAmount) {
-            stack.count = invMaxStackAmount
-        }
-    }
-
-    /**
-     * Clears [the item list][.getItems]}.
-     */
     override fun clear() {
         items.clear()
     }
@@ -82,8 +70,21 @@ interface ImplementedInventory : Inventory {
         // Override if you want behavior.
     }
 
-    override fun canPlayerUseInv(player: PlayerEntity): Boolean {
+    override fun canPlayerUse(player: PlayerEntity?): Boolean {
         return true
+    }
+
+    /**
+     * Replaces the current stack in the `slot` with the provided stack.
+     *
+     * If the stack is too big for this inventory ([Inventory.getMaxCountPerStack]),
+     * it gets resized to this inventory's maximum amount.
+     */
+    override fun setStack(slot: Int, stack: ItemStack) {
+        items[slot] = stack
+        if (stack.count > maxCountPerStack) {
+            stack.count = maxCountPerStack
+        }
     }
 
     companion object {
