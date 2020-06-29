@@ -28,7 +28,7 @@ import java.util.*
 
 class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProvider {
     init {
-        this.defaultState = stateManager.defaultState.with(FACING, Direction.NORTH).with(ACTIVE, false)
+        this.defaultState = stateManager.defaultState.with(FACING, Direction.EAST).with(ACTIVE, false)
     }
 
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>?) {
@@ -71,7 +71,7 @@ class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProv
             val d = pos.x.toDouble() + 0.5
             val e = pos.y.toDouble() + 1.0
             val f = pos.z.toDouble() + 0.5
-            world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0, 0.0, 0.0)
+            world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d, e, f, 0.0, 0.0, 0.0)
         }
     }
 

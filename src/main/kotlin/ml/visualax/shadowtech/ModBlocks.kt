@@ -2,7 +2,7 @@ package ml.visualax.shadowtech
 
 import ml.visualax.shadowtech.blocks.AlloySmelterBlock
 import ml.visualax.shadowtech.blocks.CoalGeneratorBlock
-import net.fabricmc.fabric.api.block.FabricBlockSettings
+import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
 import net.minecraft.block.Block
 import net.minecraft.block.Material
@@ -17,7 +17,6 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(10.5f, 2.2f)
                         .sounds(BlockSoundGroup.METAL)
-                        .build()
         )
         var COAL_GENERATOR = CoalGeneratorBlock(
                 FabricBlockSettings
@@ -26,7 +25,6 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(10.5f, 2.2f)
                         .sounds(BlockSoundGroup.METAL)
-                        .build()
         )
         var STEEL_BLOCK = Block(
                 FabricBlockSettings
@@ -35,7 +33,7 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(10.5f, 2.2f)
                         .sounds(BlockSoundGroup.METAL)
-                        .build()
+
         )
         var COPPER_BLOCK = Block(
                 FabricBlockSettings
@@ -44,7 +42,7 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(8.5f, 1.2f)
                         .sounds(BlockSoundGroup.METAL)
-                        .build()
+
         )
         var TIN_BLOCK = Block(
                 FabricBlockSettings
@@ -53,7 +51,7 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(6.5f, 1.000001f)
                         .sounds(BlockSoundGroup.METAL)
-                        .build()
+
         )
         var COPPER_ORE = Block(
                 FabricBlockSettings
@@ -62,7 +60,7 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(4.1f, 0.5f)
                         .sounds(BlockSoundGroup.STONE)
-                        .build()
+
         )
         var TIN_ORE = Block(
                 FabricBlockSettings
@@ -71,7 +69,7 @@ class ModBlocks {
                         .breakByTool(FabricToolTags.PICKAXES)
                         .strength(4.1f, 0.5f)
                         .sounds(BlockSoundGroup.STONE)
-                        .build()
+
         )
         var LIGHT_MACHINE_FRAME = Block(
                 FabricBlockSettings
@@ -81,7 +79,7 @@ class ModBlocks {
                         .strength(5.5f, 1.2f)
                         .sounds(BlockSoundGroup.ANVIL)
                         .nonOpaque()
-                        .build()
+
         )
     }
 }

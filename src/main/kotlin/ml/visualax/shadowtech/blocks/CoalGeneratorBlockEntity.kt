@@ -89,9 +89,12 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
         val stack = getStack(0);
         if (isValidFuel(stack)) {
             if (storedEnergy < maxStoredPower) {
-                if (energyTick >= 16) {
+                if (energyTick >= 6) {
+                    storedEnergy++
+                }
+
+                if (energyTick >= 8) {
                     stack.count--
-                    storedEnergy += 2.5
                     energyTick = 0
                 }
 
