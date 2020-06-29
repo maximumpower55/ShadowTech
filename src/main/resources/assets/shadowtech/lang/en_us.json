@@ -12,5 +12,5 @@
   "block.shadowtech.light_machine_frame": "Light Machine Frame",
   "block.shadowtech.alloy_smelter": "Alloy Smelter",
   "block.shadowtech.coal_generator": "Coal Generator",
-  "gui.shadowtech.energy": "SF"
+  "gui.shadowtech.energy": "SF %d/%d"
 }
