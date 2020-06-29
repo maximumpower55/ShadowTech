@@ -2,9 +2,9 @@
   "parent": "block/cube",
   "textures": {
     "particle": "shadowtech:block/machine_side_bricks",
-    "west": "shadowtech:block/alloy_smelter_front_off",
+    "west": "shadowtech:block/machine_side_bricks",
     "east": "shadowtech:block/machine_side_bricks",
-    "north": "shadowtech:block/machine_side_bricks",
+    "north": "shadowtech:block/alloy_smelter_front_off",
     "south": "shadowtech:block/machine_side_bricks",
     "down": "shadowtech:block/machine_downup_bricks",
     "up": "shadowtech:block/machine_downup_bricks"
