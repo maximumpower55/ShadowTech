@@ -7,6 +7,7 @@ class ModItems {
         var STEEL_INGOT = Item(Item.Settings().group(ShadowTechMod.MATERIALS_ITEM_GROUP))
         var COPPER_INGOT = Item(Item.Settings().group(ShadowTechMod.MATERIALS_ITEM_GROUP))
         var TIN_INGOT = Item(Item.Settings().group(ShadowTechMod.MATERIALS_ITEM_GROUP))
+        var COPPER_COIL = Item(Item.Settings().group(ShadowTechMod.MATERIALS_ITEM_GROUP))
     }
 }
 
