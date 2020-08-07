@@ -103,6 +103,7 @@ class ShadowTechMod {
         Registry.register(Registry.ITEM, Identifier("shadowtech", "steel_ingot"), ModItems.STEEL_INGOT)
         Registry.register(Registry.ITEM, Identifier("shadowtech", "copper_ingot"), ModItems.COPPER_INGOT)
         Registry.register(Registry.ITEM, Identifier("shadowtech", "tin_ingot"), ModItems.TIN_INGOT)
+        Registry.register(Registry.ITEM, Identifier("shadowtech", "copper_coil"), ModItems.COPPER_COIL)
         Registry.register(
                 Registry.ITEM,
                 Identifier("shadowtech", "alloy_smelter"),
