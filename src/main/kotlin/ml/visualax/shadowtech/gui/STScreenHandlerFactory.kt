@@ -11,7 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.text.Text
 import net.minecraft.util.math.BlockPos
 
-class STScreenHandlerFactory(val type: ExtendedScreenHandlerType<*>, val pos: BlockPos) : ExtendedScreenHandlerFactory {
+class STScreenHandlerFactory(val type: ExtendedScreenHandlerType<*>, private val pos: BlockPos) : ExtendedScreenHandlerFactory {
     override fun createMenu(syncId: Int, inv: PlayerInventory?, player: PlayerEntity?): ScreenHandler? {
         val packet = PacketByteBuf(Unpooled.buffer())
         packet.writeBlockPos(pos)
