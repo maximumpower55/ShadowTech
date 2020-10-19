@@ -1,5 +1,16 @@
 {
   "variants": {
-    "": {"model": "shadowtech:block/alloy_smelter"}
+    "facing=north,active=false": { "model": "shadowtech:block/alloy_smelter" },
+    "facing=south,active=false": { "model": "shadowtech:block/alloy_smelter", "y": 180 },
+    "facing=west,active=false":  { "model": "shadowtech:block/alloy_smelter", "y": 270 },
+    "facing=east,active=false":  { "model": "shadowtech:block/alloy_smelter", "y": 90 },
+    "facing=down,active=false":  { "model": "shadowtech:block/alloy_smelter", "x": 180 },
+    "facing=up,active=false":  { "model": "shadowtech:block/alloy_smelter" },
+    "facing=north,active=true": { "model": "shadowtech:block/alloy_smelter_on" },
+    "facing=south,active=true": { "model": "shadowtech:block/alloy_smelter_on", "y": 180 },
+    "facing=west,active=true":  { "model": "shadowtech:block/alloy_smelter_on", "y": 270 },
+    "facing=east,active=true":  { "model": "shadowtech:block/alloy_smelter_on", "y": 90 },
+    "facing=down,active=true":  { "model": "shadowtech:block/alloy_smelter_on", "x": 180 },
+    "facing=up,active=true":  { "model": "shadowtech:block/alloy_smelter_on" }
   }
 }
