@@ -1,5 +1,7 @@
 package ml.visualax.shadowtech
 
+import com.google.common.collect.ImmutableList
+import com.google.common.collect.Lists
 import ml.visualax.shadowtech.blocks.*
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -9,17 +11,26 @@ import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry
 import net.fabricmc.fabric.impl.screenhandler.ExtendedScreenHandlerType
 import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.client.render.RenderLayer
-import net.minecraft.item.*
+import net.minecraft.item.BlockItem
+import net.minecraft.item.Item
+import net.minecraft.item.ItemGroup
+import net.minecraft.item.ItemStack
+import net.minecraft.predicate.entity.LocationPredicate.biome
+import net.minecraft.predicate.entity.LocationPredicate.feature
 import net.minecraft.screen.ScreenHandlerContext
 import net.minecraft.util.Identifier
+import net.minecraft.util.registry.BuiltinRegistries
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.biome.Biome
 import net.minecraft.world.gen.GenerationStep
 import net.minecraft.world.gen.decorator.Decorator
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig
+import net.minecraft.world.gen.feature.ConfiguredFeature
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
+import java.util.*
 import java.util.function.Supplier
+
 
 class ShadowTechMod {
     companion object {
@@ -37,45 +48,34 @@ class ShadowTechMod {
         ) { ItemStack(ModBlocks.COPPER_ORE) }
     }
 
-    fun handleBiome(b: Biome) {
-        if (b.category != Biome.Category.NETHER) {
-            b.addFeature(
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    Feature.ORE.configure(
-                            OreFeatureConfig(
-                                    OreFeatureConfig.Target.NATURAL_STONE,
-                                    ModBlocks.COPPER_ORE.defaultState,
-                                    9
-                            )
-                    ).createDecoratedFeature(
-                            Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(
-                                    9,
-                                    0,
-                                    1,
-                                    84
-                            ))
-                    )
-            )
-        }
-
-        if (b.category != Biome.Category.NETHER) {
-            b.addFeature(
-                    GenerationStep.Feature.VEGETAL_DECORATION,
-                    Feature.ORE.configure(
-                            OreFeatureConfig(
-                                    OreFeatureConfig.Target.NATURAL_STONE,
-                                    ModBlocks.TIN_ORE.defaultState,
-                                    6
-                            )
-                    ).createDecoratedFeature(
-                            Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(
-                                    7,
-                                    0,
-                                    2,
-                                    82
-                            ))
-                    )
-            )
+    fun handleBiome(biome: Biome) {
+        if (biome.category != Biome.Category.NETHER) {
+//            val feature = GenerationStep.Feature.VEGETAL_DECORATION
+//            val configuredFeature = Feature.ORE.configure(
+//                    OreFeatureConfig(
+//                            OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+//                            ModBlocks.COPPER_ORE.defaultState,
+//                            9
+//                    )
+//            ).decorate(
+//                    Decorator.RANGE.configure(RangeDecoratorConfig(
+//                            9,
+//                            0,
+//                            1
+//                    ))
+//            )
+//
+//            val features: MutableList<MutableList<Supplier<ConfiguredFeature<*, *>>>> = biome.generationSettings.features
+//
+//            while (features.size <= feature.ordinal) features.add(Lists.newArrayList())
+//
+//            var featureList = features[feature.ordinal]
+//            if (featureList is ImmutableList<*>) {
+//                featureList = ArrayList(featureList)
+//                features[feature.ordinal] = featureList
+//            }
+//
+//            featureList.add(Supplier { configuredFeature })
         }
     }
 
@@ -166,8 +166,8 @@ class ShadowTechMod {
         Registry.register(Registry.BLOCK, Identifier("shadowtech", "tin_ore"), ModBlocks.TIN_ORE)
 
         // ORES
-        Registry.BIOME.forEach(this::handleBiome)
-        RegistryEntryAddedCallback.event(Registry.BIOME).register(RegistryEntryAddedCallback { _: Int, _: Identifier?, biome: Biome? -> handleBiome(biome!!) })
+        BuiltinRegistries.BIOME.forEach(this::handleBiome)
+        RegistryEntryAddedCallback.event(BuiltinRegistries.BIOME).register(RegistryEntryAddedCallback { _: Int, _: Identifier?, biome: Biome? -> handleBiome(biome!!) })
 
         // GUIS
         ALLOY_SMELTER_HANDLER = ScreenHandlerRegistry.registerExtended(Identifier("shadowtech", "alloy_smelter")) { syncId, playerInventory, buf ->
