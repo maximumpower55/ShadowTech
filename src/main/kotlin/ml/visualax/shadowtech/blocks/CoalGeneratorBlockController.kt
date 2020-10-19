@@ -7,7 +7,7 @@ import io.github.cottonmc.cotton.gui.widget.WItemSlot
 import io.github.cottonmc.cotton.gui.widget.WLabel
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment
 import ml.visualax.shadowtech.ShadowTechMod
-import ml.visualax.shadowtech.gui.GuiReferences
+import ml.visualax.shadowtech.gui.GuiReference
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.screen.ScreenHandlerContext
 import net.minecraft.text.TranslatableText
@@ -29,7 +29,7 @@ class CoalGeneratorBlockController(syncId: Int, playerInventory: PlayerInventory
         label.horizontalAlignment = HorizontalAlignment.CENTER
         root.add(label, 0, 0, 9, 1)
 
-        val energybar = WBar(GuiReferences.ENERGY_BAR_EMPTY, GuiReferences.ENERGY_BAR_FULL, 0, 1, WBar.Direction.UP).withTooltip(TranslatableText("gui.shadowtech.energy", propertyDelegate[0], propertyDelegate[1]))
+        val energybar = WBar(GuiReference.EnergyBarEmpty, GuiReference.EnergyBarFull, 0, 1, WBar.Direction.UP).withTooltip(TranslatableText("gui.shadowtech.energy", propertyDelegate[0], propertyDelegate[1]))
         root.add(energybar, 0, 0, 1, 3);
 
         val itemSlot = WItemSlot.of(blockInventory, 0)
