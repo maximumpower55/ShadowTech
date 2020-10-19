@@ -28,7 +28,7 @@ import java.util.*
 
 class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProvider {
     init {
-        this.defaultState = stateManager.defaultState.with(FACING, Direction.EAST).with(ACTIVE, false)
+        this.defaultState = stateManager.defaultState.with(FACING, Direction.NORTH).with(ACTIVE, false)
     }
 
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>?) {
@@ -37,14 +37,11 @@ class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProv
     }
 
     override fun getPlacementState(context: ItemPlacementContext?): BlockState? {
-        for (facing in context!!.placementDirections) {
-            val state = defaultState.with(FACING, facing.opposite)
-            if (state.canPlaceAt(context!!.world, context!!.blockPos)) {
-                return state
-            }
+        if (context != null) {
+            return defaultState.with(FACING, context.playerFacing.opposite) as BlockState
         }
 
-        return null;
+        return null
     }
 
     override fun createBlockEntity(blockView: BlockView?): BlockEntity? {
@@ -69,9 +66,9 @@ class CoalGeneratorBlock(settings: Settings?) : Block(settings), BlockEntityProv
     override fun randomDisplayTick(state: BlockState?, world: World, pos: BlockPos, random: Random?) {
         if (state?.contains(ACTIVE) == true && state[ACTIVE]) {
             val d = pos.x.toDouble() + 0.5
-            val e = pos.y.toDouble() + 1.0
-            val f = pos.z.toDouble() + 0.5
-            world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, d, e, f, 0.0, 0.0, 0.0)
+            val e = pos.y.toDouble() + 0.3
+            val f = pos.z.toDouble() + -0.2
+            world.addParticle(ParticleTypes.FLAME, d, e, f, 0.0, 0.0, 0.0)
         }
     }
 
