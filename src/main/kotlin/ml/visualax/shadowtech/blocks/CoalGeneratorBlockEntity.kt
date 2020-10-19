@@ -50,7 +50,7 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
     }
 
     override fun isValid(slot: Int, stack: ItemStack?): Boolean {
-        return isValidFuel(stack);
+        return isValidFuel(stack)
     }
 
     override fun markDirty() {
@@ -86,7 +86,7 @@ class CoalGeneratorBlockEntity : BlockEntity(ShadowTechMod.COAL_GENERATOR_BLOCK_
 
     var energyTick = 0
     fun generateEnergy() {
-        val stack = getStack(0);
+        val stack = getStack(0)
         if (isValidFuel(stack)) {
             if (storedEnergy < maxStoredPower) {
                 if (energyTick >= 6) {
